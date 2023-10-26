@@ -1,5 +1,6 @@
-import {Card, Image, Text, Badge, Button, Group } from '@mantine/core';
-function CardComponent({ tittle, par, ders, index,Image, Text, Badge, Button, Group }) {
+import {Card, Image, Text,  Button, Group , CloseButton} from '@mantine/core';
+
+function CardComponent({tittle,par,i,click}) {
   return (
     <Card shadow="sm" padding="lg" radius="md" withBorder>
       <Card.Section>
@@ -11,24 +12,15 @@ function CardComponent({ tittle, par, ders, index,Image, Text, Badge, Button, Gr
       </Card.Section>
 
       <Group justify="space-between" mt="md" mb="xs">
-        <Text fw={500}>Norway Fjord Adventures</Text>
-        <Badge color="pink" variant="light">
-          On Sale
-        </Badge>
+        <Text fw={500}>{tittle}</Text>
+        <CloseButton   onClick={click}/>
       </Group>
-
-      <Text size="sm" c="dimmed">
-        With Fjord Tours you can explore more of the magical fjord landscapes with tours and
-        activities on and around the fjords of Norway
-      </Text>
-
+      <Text size="sm" c="dimmed">{par}</Text>
       <Button variant="light" color="blue" fullWidth mt="md" radius="md">
         Book classic tour now
       </Button>
     </Card>)         
-    }
-
-
-
+  }
 export default CardComponent;
+// Badge :kart ustundeki saled yazısı
 

@@ -6,6 +6,19 @@
   display: flex;
   gap: 10px;
 }
+.kartB {
+  margin: 5px;
+}
+
+.firstpage {
+  background-image: url("./components/Card/images/main.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 3%;
+}
+
 
 .App-logo {
   height: 40vmin;
