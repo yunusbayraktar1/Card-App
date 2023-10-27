@@ -1,4 +1,4 @@
-import { Button, Grid, Input, Textarea, Container, Stack  } from '@mantine/core';
+import { Button, Grid, Input, Textarea, Container, Stack } from '@mantine/core';
 import '@mantine/core/styles.css';
 import './App.css';
 import CardComponent from "./components/Card";
@@ -25,16 +25,19 @@ function App() {
     // });pus olmadan da yukardaki gibi
     //push dan farkı ..list den 
     //once koyarsan nesneyi card eklemesi başa olur
-    setList([  { id: 5, tittle, par: Paragraf},...List
+    setList([{ id: 5, tittle, par: Paragraf }, ...List
     ]);
   }
   return (
     <Container className="firstpage">
+      <h2>Kart ekleme</h2>
       <Stack>
-        <h2>Kart ekleme</h2>
+
         <Input.Wrapper label="Başlık"  >
-          <Input placeholder="Başlık yaz" value={tittle} onChange={(e) => setTittle(e.target.value)} />
+          <Input placeholder="Başlık yaz" value={tittle}
+            onChange={(e) => setTittle(e.target.value)} />
         </Input.Wrapper>
+
         <Textarea
           label="Paragraf"
           placeholder="Paragraf yaz"
@@ -45,19 +48,21 @@ function App() {
       <Button className="kartB" variant="outline" onClick={click}>Kart ekle</Button>
 
       <Grid >
-        {List.map(function ({ par, tittle }, i) {return(
-          <Grid.Col span={3} key={`index ${i}`}>
-            <CardComponent par={par} tittle={tittle} ders={ders} i={i}   
-        click={()=>{
-          let copyList = [...List];
-          copyList.splice(i,1);
-          setList(copyList);
+        {List.map(function ({ par, tittle }, i) {
+          return (
+            <Grid.Col span={3} key={`index ${i}`}>
+              <CardComponent   par={par} tittle={tittle} ders={ders} i={i}
+                click={() => {
+                  let copyList = [...List];
+                  copyList.splice(i, 1);
+                  setList(copyList);
 
 
-        }}
-            />
-          </Grid.Col>
-        )})}
+                }}
+              />
+            </Grid.Col>
+          )
+        })}
       </Grid>
 
     </Container>

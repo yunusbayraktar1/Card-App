@@ -6,8 +6,21 @@
   display: flex;
   gap: 10px;
 }
-.kartB {
+/* .kartB {
   margin: 5px;
+} */
+.kartB {
+  font-size: 78%;
+  margin: 1%;
+  text-decoration: none;
+  background-color: #6c756f;
+  border-radius: 20px;
+  width: 9%;
+  height: 24px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  box-shadow: 0px 0px 5px;
 }
 
 .firstpage {
