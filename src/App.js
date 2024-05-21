@@ -13,7 +13,6 @@ function App() {
 
   const [tittle, setTittle] = useState("")
   const [Paragraf, setParagraf] = useState("")
-  const [ders] = useState(11);
   const [List, setList] = useState(arr);
   const click = () => {
     setTittle("");
@@ -30,14 +29,13 @@ function App() {
   }
   return (
     <Container className="firstpage">
-      <h2>Kart ekleme</h2>
+      <h2>Simple Card APP</h2>
       <Stack>
 
         <Input.Wrapper label="Başlık"  >
           <Input placeholder="Başlık yaz" value={tittle}
             onChange={(e) => setTittle(e.target.value)} />
         </Input.Wrapper>
-
         <Textarea
           label="Paragraf"
           placeholder="Paragraf yaz"
@@ -48,10 +46,10 @@ function App() {
       <Button className="kartB" variant="outline" onClick={click}>Kart ekle</Button>
 
       <Grid >
-        {List.map(function ({ par, tittle }, i) {
+        {List.map( ({ par, tittle }, i) => {
           return (
             <Grid.Col span={3} key={`index ${i}`}>
-              <CardComponent   par={par} tittle={tittle} ders={ders} i={i}
+              <CardComponent   par={par} tittle={tittle}  i={i}
                 click={() => {
                   let copyList = [...List];
                   copyList.splice(i, 1);
